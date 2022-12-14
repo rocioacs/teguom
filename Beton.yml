@@ -1,0 +1,11 @@
+q1_start_folder: 'folder q1_start,tag_q1_started,journal_q1_started,q1_start_message' # This will run each of the Events inside the folder. Those are the 4 events directly below this, which will start the quest! 
+q1_start: 'objective start HarvestLogs' # This will start the Objective named "HarvestLogs."
+tag_q1_started: 'tag add q1_started' # Adds a tag to the Quester (Player) to indicate they started the quest.
+journal_q1_started: 'journal add journal_q1_started' # Adds a starting message to the Player's Journal (Journal.yml to customize message).
+q1_start_message: "run -message \n &6&lNew Objectives: \n&8&l » &fHarvest &aNora &f64 Oak Logs!" 
+q1_complete_folder: 'folder journal_q1_completed,tag_q1_completed,entry_q1_part1_remove,q1_complete_message,q1_reward' # This will run each of the Events inside the folder, like our "q1_start_folder" one from before!
+journal_q1_completed: 'journal add journal_q1_completed' # Adds an ending message to the Player's Journal (Journal.yml to customize message).
+tag_q1_completed: 'tag add q1_completed' # Adds a tag to the Quester to indicate they have finished this Quest.
+entry_q1_part1_remove: 'journal remove journal_q1_started' # Removes our first Journal Entry, since they have finished the objective given.
+q1_complete_message: "run -message \n&6&lQuest Complete: \nWood Harvest \n \n \n &6&lRewards: \n&8&l »  &9Cat Claw \n&8&l »  &5+250 EXP \n&8&l »  &2+250 Foraging EXP \n&8&l »  &e100 Coins" 
+q1_reward: "run ^command mmoitems give ACCESSORY CAT_CLAW %player% 1 ^command mmocore admin exp give %player% main 250 ^command mmocore admin exp give %player% Foraging 250 ^command money give %player% 100" # This runs a set of commands given. It allows for a very versatile reward system! You can replace my commands with your own "^command X"
